@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  @apply font-Open duration-300;
+}
+.nav-links a{
+  @apply text-xl font-poppins uppercase hover:text-orange-600 cursor-pointer duration-300;
+}
+
+input {
+  @apply  p-4 w-full  rounded-sm outline-none ;
+}
+
+// products 
+
+.product-card{
+  &:hover {
+    img {
+      opacity: 0.8;
+    }
+
+    button {
+      opacity: 0.85;
+      display: flex;
+    }
+  }
+}
+
+// index
+
+.category-container {
+  &:hover {
+    cursor: pointer;
+
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+
+    & .category-body-container {
+      opacity: 0.9;
+    }
+  }
+
+
+  }
