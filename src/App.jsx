@@ -15,8 +15,8 @@ function lazyWithTimeout(importFunction) {
 const LazyIndexPage = lazyWithTimeout(() => import("./pages/index/IndexPage"));
 const LazyShopPage = lazyWithTimeout(() => import("./pages/Shop"));
 const LazyCheckoutPage = lazyWithTimeout(() => import("./pages/Checkout"));
-const LazyLoginPage = lazyWithTimeout(() => import("./pages/auth/Login"));
-const LazyRegisterPage = lazyWithTimeout(() => import("./pages/auth/Register"));
+const LazyLoginPage = lazyWithTimeout(() => import("./pages/Auth/Login"));
+const LazyRegisterPage = lazyWithTimeout(() => import("./pages/Auth/Register"));
 
 const App = () => {
   return (
