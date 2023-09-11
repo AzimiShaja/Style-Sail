@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import Checkout from "./pages/Checkout";
 import IndexPage from "./pages/index/IndexPage";
 import Shop from "./pages/Shop";
 
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Route>
     </Routes>
   );
