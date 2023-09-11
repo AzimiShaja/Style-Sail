@@ -9,12 +9,11 @@ import DropDown from "./DropDown";
 import { CartContext } from "../context/CartContext";
 
 const Header = () => {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen, cartItemCount } = useContext(CartContext);
 
   const handleToggle = () => {
     setIsCartOpen(!isCartOpen);
   };
-  const count = 0;
   const { currentUser } = useContext(UserContext);
 
   const signOutHandler = async () => {
@@ -41,9 +40,9 @@ const Header = () => {
             className="flex flex-col items-center relative cursor-pointer"
           >
             <BiShoppingBag className="text-4xl" />
-            {count > 0 && (
+            {cartItemCount > 0 && (
               <span className="absolute left-6 bg-orange-600 rounded-full text-white px-2 py-[0.4px]">
-                {count}
+                {cartItemCount}
               </span>
             )}
           </div>
