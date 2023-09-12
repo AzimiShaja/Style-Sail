@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex py-3 px-10 justify-between items-center shadow-lg">
+      <div className="sticky top-0 z-50 bg-white flex py-3 px-10 justify-between items-center shadow-lg">
         <div className="flex items-center  cursor-pointer">
           <Link to={"/"}>
             <PiCrownSimpleFill className="text-5xl hover:text-orange-600 duration-300 text-gray-600" />
