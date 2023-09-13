@@ -9,7 +9,7 @@ function lazyWithTimeout(importFunction) {
       importFunction(),
       new Promise((resolve) => setTimeout(resolve, 600)),
     ]).then(([moduleExports]) => moduleExports)
-  );
+  );``
 }
 
 const LazyIndexPage = lazyWithTimeout(() => import("./pages/index/IndexPage"));

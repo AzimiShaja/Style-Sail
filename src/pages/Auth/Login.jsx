@@ -3,6 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaUserAlt } from "react-icons/fa";
 import { MdOutlinePassword } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
   signInWithGooglePopup,
@@ -26,6 +27,11 @@ const Login = () => {
     const { user } = await signInWithGooglePopup();
   };
 
+  const navigate = useNavigate();
+  const redirectToHome = () => {
+    navigate("/");
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -36,6 +42,7 @@ const Login = () => {
       );
 
       resetFormFields();
+      redirectToHome();
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
@@ -87,7 +94,9 @@ const Login = () => {
               Sign in
             </button>
             <button
-              onClick={signInWithGoogle}
+              onClick={() => {
+                signInWithGoogle();
+              }}
               className=" flex gap-2 justify-center items-center border py-3 px-6 rounded-lg hover:bg-gray-100 duration-300"
             >
               Continue with
@@ -99,8 +108,13 @@ const Login = () => {
           Don't have an account?{" "}
           <Link to={"/register"} className="underline text-black">
             Register now
-          </Link>{" "}
+          </Link>
         </p>
+        <div className="flex-col flex items-center">
+          <p className="text-xl font-bold">Demo account</p>
+          <p>email: mike@gmail.com</p>
+          <p>Pass:mike2012 </p>
+        </div>
       </div>
     </div>
   );

@@ -15,19 +15,21 @@ const DropDown = () => {
   };
 
   return (
-    <div className="absolute w-[240px] h-[340px] flex flex-col p-4 justify-between border border-black bg-white top-[90px] z-10 right-[40px]">
-      <div className="flex flex-col gap-4  w-full  overflow-scroll">
-        {cartItems.map((item) => (
-          <CartItem key={item.id} CartItem={item} />
-        ))}
-      </div>
+    <div className="sticky top-0 z-50">
+      <div className="absolute w-[240px] h-[340px] flex flex-col p-4 justify-between border border-black bg-white top-[90px] z-10 right-[40px]">
+        <div className="flex flex-col gap-4  w-full  overflow-scroll">
+          {cartItems.map((item) => (
+            <CartItem key={item.id} CartItem={item} />
+          ))}
+        </div>
 
-      <button
-        onClick={goToCheckoutHandler}
-        className="bg-orange-600 p-2 mx-auto w-full text-white mt-4"
-      >
-        Go to checkout
-      </button>
+        <button
+          onClick={goToCheckoutHandler}
+          className="bg-orange-600 p-2 mx-auto w-full text-white mt-4"
+        >
+          Go to checkout
+        </button>
+      </div>
     </div>
   );
 };
