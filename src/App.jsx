@@ -2,6 +2,9 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import preload from "./assets/Walk.gif";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 function lazyWithTimeout(importFunction) {
   return lazy(() =>
@@ -9,7 +12,8 @@ function lazyWithTimeout(importFunction) {
       importFunction(),
       new Promise((resolve) => setTimeout(resolve, 600)),
     ]).then(([moduleExports]) => moduleExports)
-  );``
+  );
+  ``;
 }
 
 const LazyIndexPage = lazyWithTimeout(() => import("./pages/index/IndexPage"));
@@ -38,6 +42,18 @@ const App = () => {
           <Route path="register" element={<LazyRegisterPage />} />
         </Routes>
       </Suspense>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      />
     </>
   );
 };

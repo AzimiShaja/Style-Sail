@@ -1,11 +1,15 @@
 import { useContext } from "react";
+import { toast } from "react-toastify";
 import { CartContext } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
   const { id, name, price, imageUrl } = product;
   const { addItemToCart } = useContext(CartContext);
 
-  const addProductToCart = () => addItemToCart(product);
+  const addProductToCart = () => {
+    addItemToCart(product);
+    toast.info(`${name} has been added to the card`);
+  };
 
   return (
     <div
